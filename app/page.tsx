@@ -1,4 +1,5 @@
 "use client";
+import IDEWorkspace from "./components/IDEWorkspace";
 
 import { useState } from "react";
 
@@ -29,10 +30,7 @@ export default function Home() {
       <div className="flex min-h-[calc(100vh-4rem)]">
         <Sidebar projects={projects} />
 
-        <Dashboard
-          username="Raunit"
-          onNewProject={addProject}
-        />
+        <IDEWorkspace />
       </div>
     </main>
   );
