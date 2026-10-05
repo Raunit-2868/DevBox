@@ -1,9 +1,17 @@
-export default function Dashboard() {
+type DashboardProps = {
+  username: string;
+  onNewProject: () => void;
+};
+
+export default function Dashboard({
+  username,
+  onNewProject,
+}: DashboardProps) {
   return (
     <section className="flex flex-1 items-center justify-center p-8">
       <div className="max-w-xl text-center">
         <p className="mb-3 text-sm font-medium text-blue-400">
-          Welcome to DevBox
+          Welcome, {username}
         </p>
 
         <h2 className="text-4xl font-bold tracking-tight">
@@ -15,9 +23,12 @@ export default function Dashboard() {
           assistance—all from one workspace.
         </p>
 
-        <button className="mt-8 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-200">
-          + New Project
-        </button>
+        <button
+  onClick={onNewProject}
+  className="mt-8 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-200"
+>
+  + New Project
+</button>
       </div>
     </section>
   );
